@@ -9,7 +9,10 @@ public class Axe extends Weapon {
 
     @Override
     public boolean doDamage() {
-        return false;
+        if (isBroken())
+            return false;
+        reduceDurability(1);
+        return true;
     }
 
     @Override

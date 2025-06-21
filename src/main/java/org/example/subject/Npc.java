@@ -1,11 +1,11 @@
-package org.example.subjects;
+package org.example.subject;
 
-public abstract class Nps extends Subjects {
+public abstract class Npc extends Subject {
 
     private String type;
     int gold;
 
-    public Nps(String type, String name, int gold) {
+    public Npc(String type, String name, int gold) {
         super(name);
         this.type = type;
         this.gold = gold;

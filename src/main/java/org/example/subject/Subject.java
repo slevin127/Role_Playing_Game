@@ -1,6 +1,6 @@
-package org.example.subjects;
+package org.example.subject;
 
-public abstract class Subjects {
+public abstract class Subject {
     private String name;
     private int level;
     private int experience;
@@ -9,12 +9,12 @@ public abstract class Subjects {
     private int power;
     private int dexterity;
 
-    public Subjects(String name) {
+    public Subject(String name) {
         this.name = name;
     }
 
-    public Subjects(String name, int level, int experience, int live, int power,
-                    int dexterity) {
+    public Subject(String name, int level, int experience, int live, int power,
+                   int dexterity) {
         this.name = name;
         this.level = level;
         this.experience = experience;
@@ -56,7 +56,15 @@ public abstract class Subjects {
     }
 
     public void setLive(int live) {
-        this.live = live;
+        if (live <= 0) {
+            this.live = 0;
+            System.out.println(this.getName() + " погиб.");
+        } else if (live > 100) {
+            this.live = 100;
+        } else {
+            this.live = live;
+        }
+
     }
 
     public int getPower() {

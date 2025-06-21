@@ -1,8 +1,8 @@
 package org.example.weapon;
 
-import org.example.item.Items;
+import org.example.item.Item;
 
-public abstract class Weapon extends Items {
+public abstract class Weapon extends Item {
 
     private byte damage;
 
@@ -39,5 +39,8 @@ public abstract class Weapon extends Items {
 
     public void setDurability(int durability) {
         this.durability = durability;
+    }
+    public void reduceDurability(int value) {
+        this.durability = Math.max(0, this.durability - value);
     }
 }

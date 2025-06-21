@@ -1,11 +1,11 @@
 package org.example.item;
 
-public abstract class Items {
+public abstract class Item {
     private String type;
     private String name;
     private int price;
 
-    public Items(String type, String name, int price) {
+    public Item(String type, String name, int price) {
         this.type = type;
         this.name = name;
         this.price = price;
@@ -32,6 +32,6 @@ public abstract class Items {
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        this.price = Math.max(0, price);
     }
 }

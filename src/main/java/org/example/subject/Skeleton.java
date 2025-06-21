@@ -1,6 +1,6 @@
-package org.example.subjects;
+package org.example.subject;
 
-public class Skeleton extends Subjects {
+public class Skeleton extends Subject {
      int gold;
 
     public Skeleton(String name, int level,

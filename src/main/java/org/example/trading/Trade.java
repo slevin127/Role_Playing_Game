@@ -1,8 +1,8 @@
 package org.example.trading;
 
-import org.example.item.Items;
-import org.example.subjects.Player;
+import org.example.item.Item;
+import org.example.subject.Player;
 
 public interface Trade {
-    boolean trade(Player buyer, Items item);
+    boolean trade(Player buyer, Item item);
 }

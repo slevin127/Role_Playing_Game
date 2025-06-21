@@ -1,21 +1,26 @@
-package org.example.subjects;
+package org.example.subject;
 
 
 import org.example.battle.Attack;
-import org.example.battle.Healing;
-import org.example.item.Items;
+
+import org.example.item.Item;
 import org.example.move.Move;
 import org.example.trading.Trade;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
 Игрок
  */
-public class Player extends Subjects implements Trade, Move, Attack, Healing {
+public class Player extends Subject implements Trade, Move, Attack {
     int gold;
-    private final List<Items> inventory = new ArrayList<Items>();
+    private final List<Item> inventory = new ArrayList<Item>(); //инвентарь
+    private final Map<String Inetger> resource = new HashMap; /* исчисляемые, и меняющие показатели
+    такие как опыт и золото, меняются после каждой битвы
+    */
 
     public Player(String name, int level,
                   int experience,
@@ -25,11 +30,11 @@ public class Player extends Subjects implements Trade, Move, Attack, Healing {
         this.gold = gold;
     }
 
-    public void addItem(Items item) {
+    public void addItem(Item item) {
         inventory.add(item);
     }
 
-    public List<Items> getInventory() {
+    public List<Item> getInventory() {
         return inventory;
     }
 
@@ -43,13 +48,9 @@ public class Player extends Subjects implements Trade, Move, Attack, Healing {
 
     }
 
-    @Override
-    public void heal() {
-
-    }
 
     @Override
-    public boolean trade(Player buyer, Items item) {
+    public boolean trade(Player buyer, Item item) {
         return false;
     }
 
